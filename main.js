@@ -1,5 +1,5 @@
 let nav = document.querySelector("nav");
-let scrollBtn = document.querySelector(",scroll-button a")
+let scrollBtn = document.querySelector(".scroll-button a")
 console.log(scrollBtn)
 let val;
 window.onscroll = function () {
@@ -25,4 +25,41 @@ menuBtn.onclick = function () {
     scrollBtn.style.pointerEvents = "none"
 }
 
+cancelBtn.onclick = function () {
+    navBar.classList.remove("active")
+    menuBtn.style.opacity = "1";
+    menuBtn.style.pointerEvents = "auto"
+    body.style.overflow = "auto"
+    scrollBtn.style.pointerEvents = "auto";
+}
 
+//Side Navigation bar close while we click navigation links
+
+let navLinks = document.querySelectorAll(".menu li a")
+for (var i = 0; i < navLinks.length; i++) {
+    navLinks[i].addEventListener("click", function () {
+        navBar.classList.remove("active")
+        menuBtn.style.opacity = "1"
+        menuBtn.style.pointerEvents = "auto"
+    })
+}
+
+
+const rightSection = document.querySelector('.home .right');
+
+
+function toggleRightSection(e) {
+    if (e.matches) {
+
+        rightSection.style.display = 'none';
+    } else {
+
+        rightSection.style.display = '';
+    }
+}
+
+const mediaQuery = window.matchMedia('(max-width: 768px)');
+mediaQuery.addEventListener('change', toggleRightSection);
+
+
+toggleRightSection(mediaQuery);
