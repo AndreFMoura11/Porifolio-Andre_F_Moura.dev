@@ -149,6 +149,10 @@ nav.sticky .menu-btn {
   .navbar .menu .cancel-btn {
     display: block;
   }
+
+  .home-content {
+    padding-top: 80px; /* ajuste conforme a altura do seu navbar */
+  }
 }
 
 /* Custom Scroll Bar */
@@ -770,6 +774,15 @@ strong{
 
 /* Mobile: até 768px */
 @media screen and (max-width: 768px) {
+
+  nav .navbar {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+  }
+
 
   .home-content{
     display: flex;
